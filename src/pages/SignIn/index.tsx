@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import { Input } from '../../components/Input';
 import { Button } from '../../components/Button';
@@ -11,8 +11,14 @@ import {
   Form, 
   ContentAction
 } from './styles';
+import { useCallback } from 'react';
 
 export function SignIn() {
+  const navigate = useNavigate();
+
+  const onSubmit = useCallback(() => {
+    navigate('/dashboard')
+  }, [navigate])
 
   return (
       <Container>
@@ -21,7 +27,7 @@ export function SignIn() {
             <h1>CONTROLE DE INVESTIMETOS</h1>
           </ContentTitle>
           <ContentForm>
-            <Form>
+            <Form onSubmit={onSubmit}>
               <h2>SIGN IN</h2>
 
               <Input
