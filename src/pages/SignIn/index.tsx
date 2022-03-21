@@ -1,5 +1,13 @@
+import { Input } from '../../components/Input';
 
-import { Container, Main, ContentTitle, ContentForm, Form, FormGroup } from './styles';
+import { 
+  Container, 
+  Main, 
+  ContentTitle, 
+  ContentForm, 
+  Form, 
+  ContentAction
+} from './styles';
 
 export function SignIn() {
 
@@ -13,10 +21,27 @@ export function SignIn() {
             <Form>
               <h2>SIGN IN</h2>
 
-              <FormGroup>
-                <label htmlFor="name">Nome:</label>
-                <input type="text" placeholder='Digite seu nome' />
-              </FormGroup>
+              <Input
+                label='Email:'
+                type='text'
+                name='email'
+                id='email'
+                placeholder='Digite seu email'
+              />
+
+              <Input
+                label='Senha:'
+                type='password'
+                name='password'
+                id='password'
+                placeholder='Digite sua senha'
+              />
+
+              <ContentAction>
+                <input type="submit" value="Entrar" />
+                
+                <a href="https://www.google.com.br">Ainda não possui conta? </a>
+              </ContentAction>
             </Form>
           </ContentForm>
         </Main>
