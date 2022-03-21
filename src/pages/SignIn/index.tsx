@@ -1,4 +1,5 @@
 import { Input } from '../../components/Input';
+import { Button } from '../../components/Button';
 
 import { 
   Container, 
@@ -38,7 +39,10 @@ export function SignIn() {
               />
 
               <ContentAction>
-                <input type="submit" value="Entrar" />
+                <Button 
+                  type="submit" 
+                  value="Entrar" 
+                />
                 
                 <a href="https://www.google.com.br">Ainda não possui conta? </a>
               </ContentAction>

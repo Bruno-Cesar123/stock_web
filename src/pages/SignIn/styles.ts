@@ -47,23 +47,6 @@ export const ContentAction = styled.div`
     justify-content: center;
     align-items: center;
 
-    input[type="submit"] {
-        margin-top: 16px;
-        width: 400px;
-        height: 50px;
-        border-radius: 32px;
-        cursor: pointer;
-        background: #7652B2;
-        border: none;
-        
-        font-size: 24px;
-        color: #FFFFFF;
-
-        &:hover {
-            filter: brightness(0.9);
-        }
-    }
-
     a {
         width: 400px;
         text-align: end;
