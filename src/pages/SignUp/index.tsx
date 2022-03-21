@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import { Input } from '../../components/Input';
 import { Button } from '../../components/Button';
 
@@ -45,7 +47,7 @@ export function SignUp() {
               value="Cadastrar" 
             />
 
-            <a href="https://www.google.com.br">Já possui conta? </a>
+            <Link to="/">Já possui conta? </Link>
           </ContentAction>
         </Form>
       </ContentForm>

@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import { Input } from '../../components/Input';
 import { Button } from '../../components/Button';
 
@@ -44,7 +46,7 @@ export function SignIn() {
                   value="Entrar" 
                 />
                 
-                <a href="https://www.google.com.br">Ainda não possui conta? </a>
+                <Link to="/signup">Ainda não possui conta? </Link>
               </ContentAction>
             </Form>
           </ContentForm>

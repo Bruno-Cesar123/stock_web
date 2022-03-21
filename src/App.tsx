@@ -1,13 +1,11 @@
-import { SignIn } from './pages/SignIn';
+import { Routes } from './routes';
 
-// import { SignUp } from './pages/SignUp';
 import GlobalStyle from './styles/global'
 
 function App() {
   return (
     <>
-      <SignIn />
-      {/* <SignUp /> */}
+      <Routes />
       <GlobalStyle />
     </>
   );
