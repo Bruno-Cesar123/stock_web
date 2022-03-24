@@ -1,7 +1,16 @@
 
+import { Header } from "../../components/Header";
+import { Sidebar } from "../../components/SideBar";
+
+import { Container } from './styles';
 
 export function Dashboard() {
     return (
-        <h1>Dashboard</h1>
+        <Container>
+            
+            <Sidebar />
+            <Header />
+
+        </Container>
     )
 }
