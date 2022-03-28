@@ -12,42 +12,41 @@ export const Menu = styled.aside`
         padding: 16px;
     }
 
-    ul {
-        text-align: center;
-        margin-top: 32px;
+`;
 
-        li {
-            height: 48px;
-            width: 100%;
+export const Ul = styled.ul`
+    text-align: center;
+    margin-top: 32px;
+`;
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
+export const Li = styled.li`
+    height: 48px;
+    width: 100%;
 
-            transition: all 0.7s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-            &:hover {
-                background: #f2f2f2;
+    transition: all 0.7s;
 
-                a {
-                    color: #6E47AD;
-                }        
-            }
+    &:hover {
+        background: #f2f2f2;
 
-            a {
-                width: 234px;
-                color: #FFFFFF;
-                text-decoration: none;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-
-                span {
-                    margin-left: 6px;
-                }
-            }
-            
-        }
+        a {
+            color: #6E47AD;
+        }        
     }
 
+    a {
+        width: 234px;
+        color: #FFFFFF;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        span {
+            margin-left: 6px;
+        }
+    }
 `;

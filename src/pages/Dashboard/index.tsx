@@ -1,16 +1,19 @@
-
+import { Outlet } from 'react-router-dom';
 import { Header } from "../../components/Header";
 import { Sidebar } from "../../components/SideBar";
 
-import { Container } from './styles';
+
+import { Container, Content } from './styles';
 
 export function Dashboard() {
     return (
-        <Container>
-            
+        <Container>   
             <Sidebar />
-            <Header />
 
+            <Content>
+                <Header />
+                <Outlet />
+            </Content>
         </Container>
     )
 }
