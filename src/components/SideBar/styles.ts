@@ -4,6 +4,7 @@ export const Menu = styled.aside`
     width: 235px;
     height: 100vh;
     background: #6E47AD;
+    position: fixed;
 
     h2 {
         font-size: 32px;
