@@ -1,101 +1,19 @@
-import { Container, Card, CardHeader, CardBody } from './styles';
+import { FiPlusCircle } from 'react-icons/fi';
+import { Card } from '../../components/Card';
+import { Container, ButtonNewCard } from './styles';
 
 export function Stock() {
     return (
 
         <Container>
-            <Card>
-                <CardHeader>
-                    <h1>PRIO3</h1>
-                </CardHeader>
-                <CardBody>
-                    <p>Quantidade: <span>1000</span></p>
-                    <p>Preço de compra: <span>R$500,00</span></p>
-                    <p>Preço de venda: <span>R$500,00</span></p>
-                </CardBody>
-            </Card>
-
-            <Card>
-                <CardHeader>
-                    <h1>PRIO3</h1>
-                </CardHeader>
-                <CardBody>
-                    <p>Quantidade: <span>1000</span></p>
-                    <p>Preço de compra: <span>R$500,00</span></p>
-                    <p>Preço de venda: <span>R$500,00</span></p>
-                </CardBody>
-            </Card>
-
-            <Card>
-                <CardHeader>
-                    <h1>PRIO3</h1>
-                </CardHeader>
-                <CardBody>
-                    <p>Quantidade: <span>1000</span></p>
-                    <p>Preço de compra: <span>R$500,00</span></p>
-                    <p>Preço de venda: <span>R$500,00</span></p>
-                </CardBody>
-            </Card>
-            <Card>
-                <CardHeader>
-                    <h1>PRIO3</h1>
-                </CardHeader>
-                <CardBody>
-                    <p>Quantidade: <span>1000</span></p>
-                    <p>Preço de compra: <span>R$500,00</span></p>
-                    <p>Preço de venda: <span>R$500,00</span></p>
-                </CardBody>
-            </Card>
-            <Card>
-                <CardHeader>
-                    <h1>PRIO3</h1>
-                </CardHeader>
-                <CardBody>
-                    <p>Quantidade: <span>1000</span></p>
-                    <p>Preço de compra: <span>R$500,00</span></p>
-                    <p>Preço de venda: <span>R$500,00</span></p>
-                </CardBody>
-            </Card>
-            <Card>
-                <CardHeader>
-                    <h1>PRIO3</h1>
-                </CardHeader>
-                <CardBody>
-                    <p>Quantidade: <span>1000</span></p>
-                    <p>Preço de compra: <span>R$500,00</span></p>
-                    <p>Preço de venda: <span>R$500,00</span></p>
-                </CardBody>
-            </Card>
-            <Card>
-                <CardHeader>
-                    <h1>PRIO3</h1>
-                </CardHeader>
-                <CardBody>
-                    <p>Quantidade: <span>1000</span></p>
-                    <p>Preço de compra: <span>R$500,00</span></p>
-                    <p>Preço de venda: <span>R$500,00</span></p>
-                </CardBody>
-            </Card>
-            <Card>
-                <CardHeader>
-                    <h1>PRIO3</h1>
-                </CardHeader>
-                <CardBody>
-                    <p>Quantidade: <span>1000</span></p>
-                    <p>Preço de compra: <span>R$500,00</span></p>
-                    <p>Preço de venda: <span>R$500,00</span></p>
-                </CardBody>
-            </Card>
-            <Card>
-                <CardHeader>
-                    <h1>PRIO3</h1>
-                </CardHeader>
-                <CardBody>
-                    <p>Quantidade: <span>1000</span></p>
-                    <p>Preço de compra: <span>R$500,00</span></p>
-                    <p>Preço de venda: <span>R$500,00</span></p>
-                </CardBody>
-            </Card> 
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <ButtonNewCard>
+                <FiPlusCircle />
+            </ButtonNewCard> 
+            
         </Container>
     )
 }
