@@ -1,4 +1,7 @@
-import { Link, useNavigate } from 'react-router-dom';
+
+import { Link } from 'react-router-dom';
+import * as Yup from 'yup';
+import { useFormik } from 'formik';
 
 import { Input } from '../../components/Input';
 import { Button } from '../../components/Button';
@@ -11,14 +14,36 @@ import {
   Form, 
   ContentAction
 } from './styles';
-import { useCallback } from 'react';
+
+interface SignInFormData {
+  email: string;
+  password: string;
+}
+
+const validationSchema = Yup.object().shape({
+  email: Yup.string()
+    .required('* campo obrigatório')
+    .email('* Email incorreto'),
+  password: Yup.string().required('* campo obrigatório')
+})
+
 
 export function SignIn() {
-  const navigate = useNavigate();
 
-  const onSubmit = useCallback(() => {
-    navigate('/dashboard')
-  }, [navigate])
+  const formik = useFormik({
+    initialValues: {
+      email: '',
+      password: '',
+    },
+    validationSchema,
+    onSubmit: (data: SignInFormData) => {
+      try {
+        console.log(data)
+      } catch (err) {
+        console.log('erro ao acessar')
+      }
+    }
+  })
 
   return (
       <Container>
@@ -27,7 +52,7 @@ export function SignIn() {
             <h1>CONTROLE DE INVESTIMETOS</h1>
           </ContentTitle>
           <ContentForm>
-            <Form onSubmit={onSubmit}>
+            <Form onSubmit={formik.handleSubmit}>
               <h2>SIGN IN</h2>
 
               <Input
@@ -36,6 +61,9 @@ export function SignIn() {
                 name='email'
                 id='email'
                 placeholder='Digite seu email'
+                value={formik.values.email}
+                onChange={formik.handleChange}
+                isError={formik.touched.email && Boolean(formik.errors.email)}
               />
 
               <Input
@@ -44,7 +72,10 @@ export function SignIn() {
                 name='password'
                 id='password'
                 placeholder='Digite sua senha'
-              />
+                value={formik.values.password}
+                onChange={formik.handleChange}
+                isError={formik.touched.password && Boolean(formik.errors.password)}
+              />             
 
               <ContentAction>
                 <Button 

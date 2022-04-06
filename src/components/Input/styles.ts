@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+interface InputProps {
+    invalid: boolean;
+}
+
 export const FormGroup = styled.div`
     margin-top: 32px;
     width: 100%;
@@ -13,16 +17,17 @@ export const FormGroup = styled.div`
     }    
 `;
 
-export const Container = styled.input`
+export const Container = styled.input<InputProps>`
     margin-top: 16px;
     width: 400px;
     height: 70px;
     padding: 18px;
     border-radius: 16px;
-    border: solid 1px #7652B2;
+    border: solid 1px ${p => p.invalid ? '#ff4040' : '#7652B2'};
+    
     outline: none;
 
     &:focus {
-        box-shadow: 0 0 5px #7652B2;;
+        box-shadow: 0 0 5px ${p => p.invalid ? '#ff4040' : '#7652B2'};
     }
 `;
