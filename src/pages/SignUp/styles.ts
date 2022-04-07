@@ -7,7 +7,7 @@ export const Container = styled.div`
 `;
 
 export const ContentForm = styled.section`
-    margin: 100px auto;
+    margin: 50px auto;
     text-align: center;
 `;
 

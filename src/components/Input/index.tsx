@@ -1,6 +1,6 @@
 
 import { InputHTMLAttributes } from 'react';
-import { FormGroup, Container } from './styles';
+import { FormGroup, Container, ErrorMessage } from './styles';
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     label: string;
@@ -8,9 +8,10 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     name: string;
     id: string;
     isError?: boolean;
+    errorMessage?: string;
 }
 
-export function Input({ label, type, name, id, isError, ...props }: InputProps) {
+export function Input({ label, type, name, id, isError, errorMessage, ...props }: InputProps) {
     return (
         <FormGroup>
             <label htmlFor={id}>{label}</label>
@@ -21,6 +22,7 @@ export function Input({ label, type, name, id, isError, ...props }: InputProps) 
                 id={id}
                 {...props}
             />
+            <ErrorMessage>{errorMessage}</ErrorMessage>
         </FormGroup>
     )
 }

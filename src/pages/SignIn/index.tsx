@@ -22,9 +22,9 @@ interface SignInFormData {
 
 const validationSchema = Yup.object().shape({
   email: Yup.string()
-    .required('* campo obrigatório')
+    .required('* Campo obrigatório')
     .email('* Email incorreto'),
-  password: Yup.string().required('* campo obrigatório')
+  password: Yup.string().required('* Campo obrigatório')
 })
 
 
@@ -64,6 +64,8 @@ export function SignIn() {
                 value={formik.values.email}
                 onChange={formik.handleChange}
                 isError={formik.touched.email && Boolean(formik.errors.email)}
+                errorMessage={formik.errors.email}
+                
               />
 
               <Input
@@ -75,6 +77,7 @@ export function SignIn() {
                 value={formik.values.password}
                 onChange={formik.handleChange}
                 isError={formik.touched.password && Boolean(formik.errors.password)}
+                errorMessage={formik.errors.password}
               />             
 
               <ContentAction>

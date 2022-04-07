@@ -10,6 +10,7 @@ export const FormGroup = styled.div`
     display: flex;
     align-items: center;
     flex-direction: column;
+    text-align: center;
 
     label {
         width: 400px;
@@ -30,4 +31,9 @@ export const Container = styled.input<InputProps>`
     &:focus {
         box-shadow: 0 0 5px ${p => p.invalid ? '#ff4040' : '#7652B2'};
     }
+`;
+
+export const ErrorMessage = styled.p`
+    margin-top: 16px;
+    color: #ff4040;
 `;
