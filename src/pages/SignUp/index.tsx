@@ -1,7 +1,10 @@
-import { Link } from 'react-router-dom';
+import { useCallback } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import * as Yup from 'yup';
 import { useFormik } from 'formik';
 import { toast } from 'react-toastify';
+
+import api from '../../services/api';
 
 import { Input } from '../../components/Input';
 import { Button } from '../../components/Button';
@@ -28,6 +31,7 @@ const validationSchema = Yup.object().shape({
 })
 
 export function SignUp() {
+  const navigate = useNavigate();
 
   const formik = useFormik({
     initialValues: {
@@ -36,15 +40,19 @@ export function SignUp() {
       password: '',
     },
     validationSchema,
-    onSubmit: (data: SignUpFormData) => {
-      try {
-        console.log(data)
-        toast.success('Cadastro realizado com sucesso')
-      } catch (err) {
-        console.log('erro ao acessar')
-        toast.warning('Erro ao cadastrar usuário');
-      }
-    }
+    onSubmit: useCallback(
+      async (data: SignUpFormData) => {
+        try {
+          await api.post('/users', data)
+
+          navigate('/signin')
+
+          toast.success('Cadastro realizado com sucesso')
+        } catch (err) {
+
+          toast.warning('Erro ao cadastrar usuário');
+        }
+    }, [navigate])
   })
 
   return (
