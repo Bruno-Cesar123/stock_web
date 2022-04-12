@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import * as Yup from 'yup';
 import { useFormik } from 'formik';
+import { toast } from 'react-toastify';
 
 import { Input } from '../../components/Input';
 import { Button } from '../../components/Button';
@@ -38,8 +39,10 @@ export function SignUp() {
     onSubmit: (data: SignUpFormData) => {
       try {
         console.log(data)
+        toast.success('Cadastro realizado com sucesso')
       } catch (err) {
         console.log('erro ao acessar')
+        toast.warning('Erro ao cadastrar usuário');
       }
     }
   })

@@ -5,7 +5,7 @@ interface InputProps {
 }
 
 export const FormGroup = styled.div`
-    margin-top: 32px;
+    margin-top: 24px;
     width: 100%;
     display: flex;
     align-items: center;
