@@ -2,6 +2,7 @@
 import { Link } from 'react-router-dom';
 import * as Yup from 'yup';
 import { useFormik } from 'formik';
+import { toast } from 'react-toastify';
 
 import { Input } from '../../components/Input';
 import { Button } from '../../components/Button';
@@ -14,6 +15,8 @@ import {
   Form, 
   ContentAction
 } from './styles';
+import { useAuth } from '../../hooks/AuthContext';
+import { useCallback } from 'react';
 
 interface SignInFormData {
   email: string;
@@ -29,6 +32,7 @@ const validationSchema = Yup.object().shape({
 
 
 export function SignIn() {
+  const { signIn } = useAuth()
 
   const formik = useFormik({
     initialValues: {
@@ -36,13 +40,19 @@ export function SignIn() {
       password: '',
     },
     validationSchema,
-    onSubmit: (data: SignInFormData) => {
-      try {
-        console.log(data)
-      } catch (err) {
-        console.log('erro ao acessar')
-      }
-    }
+    onSubmit: useCallback(
+      async (data: SignInFormData) => {
+        try {
+          await signIn({
+            email: data.email,
+            password: data.password
+          })
+          
+          toast.success('Login realizado com sucesso')
+        } catch (err) {
+          toast.error('Erro ao realizar login')
+        }
+      }, [signIn])
   })
 
   return (
