@@ -1,19 +1,24 @@
 import { ToastContainer } from 'react-toastify';
+import { CookiesProvider } from 'react-cookie';
 import { Routes } from './routes';
+import { AuthContextProvider } from './hooks/AuthContext';
 
 import GlobalStyle from './styles/global'
 import 'react-toastify/dist/ReactToastify.css'; 
-import { AuthContextProvider } from './hooks/AuthContext';
+
 
 function App() {
   return (
-    <AuthContextProvider>
-      <Routes />
-      <GlobalStyle />
-      <ToastContainer
-        autoClose={3000}
-      />
+    <CookiesProvider>
+      <AuthContextProvider>
+        <Routes />
+        <GlobalStyle />
+        <ToastContainer
+          autoClose={3000}
+        />
     </AuthContextProvider>
+    </CookiesProvider>
+    
   );
 }
 
