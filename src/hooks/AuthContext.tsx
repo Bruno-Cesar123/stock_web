@@ -21,6 +21,7 @@ interface AuthState {
   }
 interface AuthContextData {
     signIn(credentials: SignInCredentials): Promise<void>;
+    signOut(): void;
     user: User;
     token: string;
 }
@@ -65,8 +66,17 @@ function AuthContextProvider({ children }: AuthContextProviderProps) {
         setData({ token, user });
 
     }, [cookies])
+
+    const signOut = useCallback(() => {
+        cookies.remove('@App:token')
+        cookies.remove('@App:user')
+
+        setData({} as AuthState)
+    }, [cookies])
+
+
     return (
-        <AuthContext.Provider value={{signIn, user: data.user, token: data.token}}>
+        <AuthContext.Provider value={{signIn, signOut ,user: data.user, token: data.token}}>
             {children}
         </AuthContext.Provider>
     )
