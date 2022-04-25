@@ -4,6 +4,7 @@ import { SignUp } from '../pages/SignUp';
 import { Dashboard } from '../pages/Dashboard';
 import { Stock } from '../pages/Stock';
 import { Fiis } from '../pages/Fiis';
+import { PrivateRoute } from './PrivateRoute';
 
 
 export function Routes() {
@@ -12,9 +13,11 @@ export function Routes() {
             <RouterDOM>
                 <Route path='/' element={<SignIn />} />
                 <Route path='/signup' element={<SignUp />} />
-                <Route path='/dashboard' element={<Dashboard />}>
-                    <Route path='stock' element={<Stock />} />
-                    <Route path='fiis' element={<Fiis />} />
+                <Route element={<PrivateRoute />}>
+                    <Route path='/dashboard' element={<Dashboard />}>
+                        <Route path='stock' element={<Stock />} />
+                        <Route path='fiis' element={<Fiis />} />
+                    </Route>
                 </Route>
             </RouterDOM>
         </BrowserRouter>

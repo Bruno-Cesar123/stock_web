@@ -1,5 +1,5 @@
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import * as Yup from 'yup';
 import { useFormik } from 'formik';
 import { toast } from 'react-toastify';
@@ -33,6 +33,7 @@ const validationSchema = Yup.object().shape({
 
 export function SignIn() {
   const { signIn } = useAuth()
+  const navigate = useNavigate();
 
   const formik = useFormik({
     initialValues: {
@@ -48,11 +49,12 @@ export function SignIn() {
             password: data.password
           })
           
+          navigate('/dashboard')
           toast.success('Login realizado com sucesso')
         } catch (err) {
           toast.error('Erro ao realizar login')
         }
-      }, [signIn])
+      }, [signIn, navigate])
   })
 
   return (

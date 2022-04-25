@@ -15,9 +15,16 @@ export const Container = styled.header`
         color: #FFFFFF;
     }
 
-    img {
-        width: 48px;
-        height: 48px;
-        border-radius: 50%;
+    div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            margin-left: 8px;
+        }
     }
 `;
