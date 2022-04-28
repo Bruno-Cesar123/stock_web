@@ -4,7 +4,10 @@ import { SignUp } from '../pages/SignUp';
 import { Dashboard } from '../pages/Dashboard';
 import { Stock } from '../pages/Stock';
 import { Fiis } from '../pages/Fiis';
+import { NewStock } from '../pages/NewSock';
+
 import { PrivateRoute } from './PrivateRoute';
+
 
 
 export function Routes() {
@@ -17,6 +20,7 @@ export function Routes() {
                     <Route path='/dashboard' element={<Dashboard />}>
                         <Route path='stock' element={<Stock />} />
                         <Route path='fiis' element={<Fiis />} />
+                        <Route path='new-stock' element={<NewStock />} />
                     </Route>
                 </Route>
             </RouterDOM>

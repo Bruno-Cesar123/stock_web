@@ -21,7 +21,7 @@ export const FormGroup = styled.div`
 export const Container = styled.input<InputProps>`
     margin-top: 16px;
     width: 400px;
-    height: 70px;
+    height: 50px;
     padding: 18px;
     border-radius: 16px;
     border: solid 1px ${p => p.invalid ? '#ff4040' : '#7652B2'};

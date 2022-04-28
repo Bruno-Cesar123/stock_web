@@ -49,7 +49,7 @@ export function SignIn() {
             password: data.password
           })
           
-          navigate('/dashboard')
+          navigate('/dashboard/stock')
           toast.success('Login realizado com sucesso')
         } catch (err) {
           toast.error('Erro ao realizar login')
