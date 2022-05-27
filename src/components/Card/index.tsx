@@ -1,15 +1,22 @@
 import { Container, CardHeader, CardBody } from './styles';
 
-export function Card() {
+interface CardProps {
+    name: string;
+    quantity: number;
+    average_price: string;
+    sales_price: string;
+}
+
+export function Card({ name, quantity, average_price, sales_price }: CardProps) {
     return (
         <Container>
             <CardHeader>
-                <h1>PRIO3</h1>
+                <h1>{name}</h1>
             </CardHeader>
             <CardBody>
-                <p>Quantidade: <span>1000</span></p>
-                <p>Preço de compra: <span>R$500,00</span></p>
-                <p>Preço de venda: <span>R$500,00</span></p>
+                <p>Quantidade: <span>{quantity}</span></p>
+                <p>Preço de compra: <span>{average_price}</span></p>
+                <p>Preço de venda: <span>{sales_price}</span></p>
             </CardBody>
         </Container>
     )
