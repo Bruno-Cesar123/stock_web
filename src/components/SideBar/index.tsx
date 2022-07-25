@@ -11,19 +11,14 @@ export function Sidebar() {
             <Ul>
                 <Li>
                     <Link to="/dashboard/stock">
-                        <FiTrendingUp /><span>AÇÕES</span>
+                        <FiTrendingUp /><span>AÇÕES / FIIS</span>
                     </Link>
                 </Li>
-                <Li>
-                    <Link to="/dashboard/fiis">
-                        <FiTrello /><span>FIIS</span>
-                    </Link>
-                </Li>
-                <Li>
-                    <a href="/">
+                {/* <Li>
+                    <Link to="/dashboard/profile">
                         <FiUser /> <span>Perfil</span>
-                    </a>
-                </Li>
+                    </Link>
+                </Li> */}
             </Ul>
         </Menu>
     )

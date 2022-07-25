@@ -3,7 +3,7 @@ import { SignIn } from '../pages/SignIn';
 import { SignUp } from '../pages/SignUp';
 import { Dashboard } from '../pages/Dashboard';
 import { Stock } from '../pages/Stock';
-import { Fiis } from '../pages/Fiis';
+import { Profile } from '../pages/Profile';
 import { NewStock } from '../pages/NewSock';
 
 import { PrivateRoute } from './PrivateRoute';
@@ -19,7 +19,7 @@ export function Routes() {
                 <Route element={<PrivateRoute />}>
                     <Route path='/dashboard' element={<Dashboard />}>
                         <Route path='stock' element={<Stock />} />
-                        <Route path='fiis' element={<Fiis />} />
+                        <Route path='profile' element={<Profile />} />
                         <Route path='new-stock' element={<NewStock />} />
                     </Route>
                 </Route>

@@ -28,7 +28,7 @@ export const Li = styled.li`
     align-items: center;
     justify-content: center;
 
-    transition: all 0.7s;
+    transition: all 0.2s;
 
     &:hover {
         background: #f2f2f2;
